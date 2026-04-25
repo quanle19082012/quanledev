@@ -99,7 +99,7 @@ const products = [{
         name: "Đặt website theo yêu cầu",
         price: "Inbox",
         phanLoai: "Có phí",
-        image: "anh/anh12.png",
+        image: "anh12.png",
         label: "Software",
         link: "https://www.facebook.com/quan.le.51371/"
     },
