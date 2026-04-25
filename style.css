@@ -458,3 +458,17 @@ body {
      padding: 8px; 
      background-color: #ffffff; 
 }
+
+/* Code để bo tròn ảnh QR và tạo khoảng cách */
+.qr-bo-tron {
+    border-radius: 24px; 
+    overflow: hidden;    
+    
+    /* Viền tím và nền trắng */
+    border: 12px solid #4a00e0; 
+    padding: 8px; 
+    background-color: #ffffff; 
+
+    /* Dòng này giúp tạo khoảng cách phía trên ảnh QR */
+    margin-top: 30px; /* Bạn có thể tăng giảm số này (ví dụ 40px) để chỉnh khoảng cách */
+}
