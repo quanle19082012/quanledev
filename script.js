@@ -105,7 +105,6 @@ const products = [{
     },
 ];
 
-// Hàm hiển thị sản phẩm (Chỉ giữ lại 1 hàm duy nhất và tối ưu nhất)
 function renderProducts(filterType = 'Tất cả') {
     const grid = document.getElementById('product-grid');
     if (!grid) return;
@@ -117,6 +116,13 @@ function renderProducts(filterType = 'Tất cả') {
     grid.innerHTML = filteredProducts.map(product => {
         const tagClass = product.phanLoai === 'Miễn phí' ? 'bg-emerald-500' : 'bg-indigo-600';
         const priceText = product.price === "0" ? "FREE" : `${product.price}`;
+        
+        // LOGIC TỰ ĐỘNG ĐỔI NÚT DỰA VÀO GIÁ
+        const isInbox = product.price === "Inbox";
+        const btnIcon = isInbox ? "fas fa-paper-plane" : "fas fa-download"; // Icon máy bay giấy (gửi tin) hoặc Download
+        const btnTitle = isInbox ? "Liên hệ ngay" : "Tải về file";
+        const btnAttr = isInbox ? `target="_blank"` : `download="${product.name}"`; // Inbox mở tab mới, Download tải file
+        const btnStyle = isInbox ? `background-color: #4f46e5;` : ``; // Làm nổi bật nút Inbox bằng màu tím
 
         return `
             <div class="product-card group bg-white rounded-[2rem] overflow-hidden border border-slate-100 shadow-sm hover:shadow-2xl transition-all duration-500">
@@ -132,8 +138,8 @@ function renderProducts(filterType = 'Tất cả') {
                     <div class="flex justify-between items-center">
                         <span class="text-2xl font-800 tracking-tighter">${priceText}</span>
                         
-                        <a href="${product.link || '#'}" download="${product.name}" class="add-btn" title="Tải về file">
-                            <i class="fas fa-download"></i>
+                        <a href="${product.link || '#'}" ${btnAttr} class="add-btn" style="${btnStyle}" title="${btnTitle}">
+                            <i class="${btnIcon}"></i>
                         </a>
                         
                     </div>
@@ -151,8 +157,10 @@ function filterProducts(type, btnElement) {
     renderProducts(type);
 
     // Nếu bạn có hàm checkEmptyState thì gọi ở đây
-    const filteredCount = type === 'Tất cả' ? products.length : products.filter(p => p.phanLoai === type).length;
-    if (typeof checkEmptyState === "function") checkEmptyState(filteredCount);
+    if (typeof checkEmptyState === "function") {
+        const filteredCount = type === 'Tất cả' ? products.length : products.filter(p => p.phanLoai === type).length;
+        checkEmptyState(filteredCount);
+    }
 }
 
 // Các hiệu ứng bổ trợ
