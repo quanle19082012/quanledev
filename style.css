@@ -1,0 +1,448 @@
+body {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+.font-800 {
+    font-weight: 800;
+}
+
+
+/* Background Mesh Animation */
+
+@keyframes gradient-mesh {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.bg-mesh {
+    background: linear-gradient(-45deg, #6366f1, #a855f7, #3b82f6, #10b981);
+    background-size: 400% 400%;
+    animation: gradient-mesh 15s ease infinite;
+}
+
+.text-gradient {
+    background: linear-gradient(to right, #6366f1, #a855f7);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+
+/* Glassmorphism */
+
+.glass-card {
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+
+/* Logo & Buttons */
+
+.logo-box {
+    width: 32px;
+    height: 32px;
+    background: #4f46e5;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    box-shadow: 0 10px 15px -3px rgba(79, 70, 229, 0.4);
+}
+
+.github-btn {
+    background: #0f172a;
+    color: white;
+    padding: 8px 20px;
+    border-radius: 99px;
+    font-size: 14px;
+    font-weight: 800;
+    transition: all 0.3s ease;
+}
+
+.github-btn:hover {
+    background: #4f46e5;
+    transform: translateY(-2px);
+}
+
+.cta-primary {
+    background: #4f46e5;
+    color: white;
+    padding: 20px 40px;
+    border-radius: 20px;
+    font-weight: 800;
+    display: inline-block;
+    box-shadow: 0 20px 40px rgba(79, 70, 229, 0.2);
+    transition: all 0.3s ease;
+}
+
+.cta-primary:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 25px 50px rgba(79, 70, 229, 0.3);
+}
+
+
+/* Product Cards */
+
+.product-card {
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.product-card:hover {
+    transform: translateY(-10px);
+}
+
+.product-img-wrapper {
+    overflow: hidden;
+    height: 280px;
+}
+
+.product-card img {
+    transition: transform 0.7s ease;
+}
+
+.product-card:hover img {
+    transform: scale(1.1);
+}
+
+.add-btn {
+    width: 48px;
+    height: 48px;
+    background: #0f172a;
+    color: white;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.4s ease;
+}
+
+.add-btn:hover {
+    background: #4f46e5;
+    transform: rotate(90deg);
+}
+
+.filter-btn {
+    padding: 8px 20px;
+    border-radius: 99px;
+    font-size: 12px;
+    font-weight: 800;
+    text-transform: uppercase;
+    color: #64748b;
+    transition: all 0.3s;
+}
+
+.filter-btn.active {
+    background: white;
+    color: #0f172a;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+
+/* Hiệu ứng Floating cho Nav */
+
+#main-nav.scrolled {
+    top: 15px;
+    width: 80%;
+    max-width: 600px;
+}
+
+#main-nav.scrolled .glass-card {
+    padding: 10px 24px;
+    background: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+
+/* Nav Link Hover Effect */
+
+.nav-link {
+    position: relative;
+    transition: color 0.3s;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: #4f46e5;
+    transition: width 0.3s ease;
+    box-shadow: 0 0 10px #4f46e5;
+}
+
+.nav-link:hover {
+    color: #4f46e5;
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+
+/* Shine Animation */
+
+.nav-shine {
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient( to right, transparent, rgba(255, 255, 255, 0.4), transparent);
+    transform: skewX(-25deg);
+    transition: 0.7s;
+}
+
+.glass-card:hover .nav-shine {
+    left: 150%;
+}
+
+
+/* Button Glow */
+
+.github-btn {
+    position: relative;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.btn-glow {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: rgba(79, 70, 229, 0.5);
+    box-shadow: 0 0 30px 15px rgba(79, 70, 229, 0.5);
+    transition: all 0.5s ease;
+    border-radius: 50%;
+    z-index: 0;
+}
+
+.github-btn:hover .btn-glow {
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    border-radius: 99px;
+}
+
+
+/* Glassmorphism mịn hơn */
+
+.glass-card {
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(25px) saturate(180%);
+    -webkit-backdrop-filter: blur(25px) saturate(180%);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+
+/* BLOG SECTION STYLES */
+
+#blog .glass-card {
+    background: rgba(255, 255, 255, 0.5);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+#blog .glass-card:hover {
+    background: white;
+    transform: translateX(10px);
+}
+
+
+/* Hiệu ứng gạch chân tiêu đề blog khi hover */
+
+#blog h4 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+#blog .lg:col-span-2 {
+    transition: transform 0.5s ease;
+}
+
+#blog .lg:col-span-2:hover {
+    transform: scale(0.99);
+    /* Tạo cảm giác nhấn xuống nhẹ khi hover bài viết lớn */
+}
+
+
+/* EMPTY STATE CUSTOM STYLES */
+
+
+/* Khối kính trung tâm */
+
+.glass-cube {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    border-radius: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+    animation: floating 4s ease-in-out infinite;
+}
+
+
+/* Các hạt nhỏ bay xung quanh */
+
+.floating-particle {
+    position: absolute;
+    background: linear-gradient(45deg, #6366f1, #a855f7);
+    border-radius: 50%;
+    z-index: 1;
+}
+
+.floating-particle.p1 {
+    width: 20px;
+    height: 20px;
+    top: 10%;
+    right: 10%;
+    animation: floating 3s ease-in-out infinite reverse;
+}
+
+.floating-particle.p2 {
+    width: 12px;
+    height: 12px;
+    bottom: 20%;
+    left: 5%;
+    opacity: 0.6;
+    animation: floating 5s ease-in-out infinite;
+}
+
+
+/* Animation lơ lửng */
+
+@keyframes floating {
+    0%,
+    100% {
+        transform: translateY(0) rotate(0deg);
+    }
+    50% {
+        transform: translateY(-15px) rotate(5deg);
+    }
+}
+
+.blob-shape {
+    transition: all 0.5s ease;
+}
+
+#empty-state:hover .blob-shape {
+    transform: rotate(45deg) scale(1.2);
+    background: #e0e7ff;
+}
+
+
+/* CONTACT SECTION STYLES */
+
+.contact-input {
+    width: 100%;
+    padding: 1.25rem 1.5rem;
+    background: rgba(255, 255, 255, 0.5);
+    border: 1px solid rgba(226, 232, 240, 0.8);
+    border-radius: 1.5rem;
+    outline: none;
+    font-weight: 600;
+    color: #1e293b;
+    transition: all 0.4s ease;
+}
+
+.contact-input:focus {
+    background: white;
+    border-color: #6366f1;
+    box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.1);
+    transform: translateY(-2px);
+}
+
+
+/* Hiệu ứng nháy nhẹ cho placeholder */
+
+.contact-input::placeholder {
+    color: #94a3b8;
+    font-weight: 500;
+}
+
+#contact .glass-card {
+    transition: transform 0.5s ease;
+}
+
+#contact .glass-card:hover {
+    transform: scale(1.01);
+}
+
+
+/* EMPTY STATE ANIMATIONS */
+
+.illustration-box {
+    animation: floating 4s ease-in-out infinite;
+}
+
+@keyframes floating {
+    0%,
+    100% {
+        transform: translateY(0) scale(1);
+    }
+    50% {
+        transform: translateY(-15px) scale(1.05);
+    }
+}
+
+.floating-dot {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    background: #6366f1;
+    border-radius: 50%;
+    opacity: 0.6;
+}
+
+.floating-dot.d1 {
+    top: 20%;
+    right: 10%;
+    animation: floating 3s ease-in-out infinite reverse;
+}
+
+.floating-dot.d2 {
+    bottom: 20%;
+    left: 10%;
+    animation: floating 5s ease-in-out infinite 1s;
+}
+
+
+/* Đảm bảo link trông giống button */
+
+.skill-btn {
+    text-decoration: none;
+    /* Bỏ gạch chân */
+    cursor: pointer;
+    display: inline-flex;
+    /* Giúp icon và chữ thẳng hàng */
+    align-items: center;
+    padding: 8px 18px;
+    border-radius: 14px;
+    font-size: 12px;
+    font-weight: 800;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.skill-btn:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+    color: inherit;
+    /* Giữ màu chữ cũ khi hover */
+}

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quanledev</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="bg-slate-50 text-slate-900 scroll-smooth">
+
+    <nav id="main-nav" class="fixed top-6 left-1/2 -translate-x-1/2 z-50 w-[95%] max-w-5xl transition-all duration-500 ease-in-out">
+        <div class="glass-card px-4 py-3 md:px-8 md:py-4 rounded-full shadow-2xl flex items-center justify-between relative overflow-hidden group">
+
+            <div class="nav-shine"></div>
+
+            <div class="flex items-center gap-2 z-10">
+                <div class="logo-box group-hover:rotate-[360deg] transition-transform duration-700">
+                    <i class="fas fa-cube"></i>
+                </div>
+                <span class="font-800 text-xl tracking-tighter uppercase group-hover:text-indigo-600 transition">Quanledev</span>
+            </div>
+
+            <div class="hidden md:flex gap-8 text-[10px] font-800 uppercase tracking-[0.2em] text-slate-500 z-10">
+                <a href="#products" class="nav-link">code</a>
+                <a href="#features" class="nav-link"></a>
+                <a href="#contact" class="nav-link">Thông tin liên hệ</a>
+            </div>
+
+            <div class="flex items-center gap-4 z-10">
+                <a href="https://github.com/" target="_blank" class="github-btn relative overflow-hidden group/btn">
+                    <span class="relative z-10">GitHub <i class="fab fa-github ml-1"></i></span>
+                    <div class="btn-glow"></div>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <section class="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
+        <div class="absolute inset-0 bg-mesh opacity-10 -z-10"></div>
+        <div class="text-center px-4 max-w-4xl">
+            <h1 class="text-6xl md:text-8xl font-800 tracking-tighter mb-8 leading-tight">
+                Quanledev <br>
+                <span class="text-gradient">share source code</span>
+            </h1>
+            <p class="text-lg text-slate-500 mb-12 font-medium">-------------</p>
+            <a href="#products" class="cta-primary">Source code</a>
+        </div>
+    </section>
+
+    <section id="products" class="py-32 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-4">
+                <div>
+                    <h2 class="text-4xl font-800 uppercase tracking-tighter">Source code</h2>
+                    <p class="text-slate-400 font-medium">.</p>
+                </div>
+                <div class="flex gap-2">
+                    <button class="filter-btn active" onclick="filterProducts('Tất cả', this)">Tất cả</button>
+                    <button class="filter-btn" onclick="filterProducts('Miễn phí', this)">Miễn phí</button>
+                    <button class="filter-btn" onclick="filterProducts('Có phí', this)">Có phí</button>
+                </div>
+            </div>
+
+            <div id="product-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex flex-col lg:flex-row gap-16 items-start">
+
+                <div class="w-full lg:w-1/2 space-y-10 animate-fade-in-up">
+                    <div>
+                        <h2 class="text-5xl font-800 tracking-tighter mb-4 uppercase">Thông tin liên hệ</h2>
+                        <p class="text-slate-500 font-medium italic">Nếu bạn có vấn đề gì thì hay góp ý cho mình...</p>
+                    </div>
+
+                    <div class="flex items-center gap-6 group">
+                        <div class="w-14 h-14 bg-blue-50 text-blue-600 rounded-2xl flex items-center justify-center text-xl group-hover:bg-blue-600 group-hover:text-white transition-all duration-500 shrink-0 shadow-sm">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div>
+                            <p class="text-[10px] font-800 uppercase tracking-widest text-slate-400 mb-1">Email cho mình</p>
+                            <p class="text-lg font-800 text-slate-800 break-all">lehoangquan19082012@gmail.com</p>
+                        </div>
+                    </div>
+
+
+                </div>
+
+                <div class="w-full lg:w-1/2">
+                    <div class="glass-card p-8 md:p-10 rounded-[3rem] shadow-2xl border border-slate-50 bg-white/50 backdrop-blur-xl">
+                        <form action="#" class="space-y-6">
+                            <div class="space-y-2">
+                                <input type="text" placeholder="Tên của bạn" class="contact-input">
+                            </div>
+                            <div class="space-y-2">
+                                <input type="email" placeholder="Email liên hệ" class="contact-input">
+                            </div>
+                            <div class="space-y-2">
+                                <textarea rows="4" placeholder="Lời nhắn..." class="contact-input resize-none"></textarea>
+                            </div>
+                            <button type="submit" class="cta-primary w-full py-5 rounded-2xl flex items-center justify-center gap-3 shadow-xl shadow-indigo-200">
+                            Gửi đi <i class="fas fa-paper-plane text-sm"></i>
+                        </button>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-slate-900 text-slate-400 py-20 px-4 rounded-t-[3rem]">
+        <div class="max-w-6xl mx-auto text-center">
+            <h2 class="text-white text-3xl font-800 mb-6 uppercase">Quanledev</h2>
+            <div class="flex justify-center gap-8 mb-10">
+                <a href="https://github.com/QuanLehoang" class="hover:text-white transition text-2xl"><i class="fab fa-github"></i></a>
+                <a href="https://www.instagram.com/quan_le_1908/" class="hover:text-white transition text-2xl"><i class="fab fa-instagram"></i></a>
+                <a href="https://t.me/Quanlee33" class="hover:text-white transition text-2xl"><i class="fab fa-telegram"></i></a>
+            </div>
+            <p class="text-xs tracking-widest uppercase opacity-50">&copy; Le Hoang Quan</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
