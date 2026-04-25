@@ -95,6 +95,14 @@ const products = [{
         label: "Digital",
         link: "filecode/Interact-main.zip"
     },
+    {
+        name: "Đặt website theo yêu cầu",
+        price: "Inbox",
+        phanLoai: "Có phí",
+        image: "anh/anh12.png",
+        label: "Software",
+        link: "https://www.facebook.com/quan.le.51371/"
+    },
 ];
 
 // Hàm hiển thị sản phẩm (Chỉ giữ lại 1 hàm duy nhất và tối ưu nhất)
@@ -108,7 +116,7 @@ function renderProducts(filterType = 'Tất cả') {
 
     grid.innerHTML = filteredProducts.map(product => {
         const tagClass = product.phanLoai === 'Miễn phí' ? 'bg-emerald-500' : 'bg-indigo-600';
-        const priceText = product.price === "0" ? "FREE" : `$${product.price}`;
+        const priceText = product.price === "0" ? "FREE" : `${product.price}`;
 
         return `
             <div class="product-card group bg-white rounded-[2rem] overflow-hidden border border-slate-100 shadow-sm hover:shadow-2xl transition-all duration-500">
