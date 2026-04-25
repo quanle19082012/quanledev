@@ -379,6 +379,7 @@ body {
 
 #contact .glass-card {
     transition: transform 0.5s ease;
+    margin-bottom: 20px;
 }
 
 #contact .glass-card:hover {
