@@ -383,6 +383,7 @@ body {
 
 #contact .glass-card:hover {
     transform: scale(1.01);
+    margin-top: 80px;
 }
 
 
