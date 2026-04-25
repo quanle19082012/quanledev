@@ -188,3 +188,32 @@ document.addEventListener('DOMContentLoaded', () => {
     window.addEventListener('scroll', handleNavScroll);
     initContactForm();
 });
+
+// 1. Chặn click chuột phải
+document.addEventListener('contextmenu', function(e) {
+    e.preventDefault();
+});
+
+// 2. Chặn các phím tắt phổ biến để mở DevTools
+document.onkeydown = function(e) {
+    // Chặn F12
+    if (e.keyCode === 123) {
+        return false;
+    }
+    // Chặn Ctrl+Shift+I (Mở tab Elements)
+    if (e.ctrlKey && e.shiftKey && e.keyCode === 73) {
+        return false;
+    }
+    // Chặn Ctrl+Shift+C (Mở tab Elements)
+    if (e.ctrlKey && e.shiftKey && e.keyCode === 67) {
+        return false;
+    }
+    // Chặn Ctrl+Shift+J (Mở tab Console)
+    if (e.ctrlKey && e.shiftKey && e.keyCode === 74) {
+        return false;
+    }
+    // Chặn Ctrl+U (Xem mã nguồn HTML)
+    if (e.ctrlKey && e.keyCode === 85) {
+        return false;
+    }
+};
