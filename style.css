@@ -446,3 +446,13 @@ body {
     color: inherit;
     /* Giữ màu chữ cũ khi hover */
 }
+/* Code để bo tròn ảnh QR */
+.qr-bo-tron {
+    border-radius: 24px; /* Chỉnh số này để góc bo nhiều hay ít */
+    overflow: hidden;    
+    
+    /* Mở comment 3 dòng dưới nếu bạn muốn có khung viền màu tím bao quanh giống ảnh mẫu của bạn */
+    border: 12px solid #4a00e0; 
+     padding: 8px; 
+     background-color: #ffffff; 
+}
